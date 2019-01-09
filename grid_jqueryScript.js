@@ -1,3 +1,25 @@
+function createTable(){
+    var person=[]                                                                   //Array of Objects...
+    praveen={name:"Praveen Yadav",score:34,email:"praveen@technovert.com"};
+    person.push(praveen);
+    anand={name:"Anand Galla",score:43,email:"anand@technovert.com"};
+    person.push(anand);
+    yuva={name:"Yuva",score:50,email:"youba@technovert.com"};
+    person.push(yuva);
+    sahu={name:"Sahu",score:78,email:"sahu@technovert.com"};
+    person.push(sahu);
+    km={name:"krishna Manohar",score:65,email:"km@technovert.com"};
+    person.push(km);
+   
+    var checkbox="<td><input name='checkbox' type='checkbox' onclick='changeTopmostCheckbox()' ></td>";
+    for(var i=0;i<person.length;i++)
+    {
+        var rows="<tr>" + checkbox + "<td>" + person[i].name +"</td> <td class='score'>" + person[i].score + "</td> <td>" + person[i].email + "</td> <td></td>";
+        $("table tbody").append(rows);
+
+    }
+}
+
 function search(){
     var input=$(".search-box").val();
     var filter=input.toUpperCase();
@@ -44,48 +66,35 @@ function changeTopmostCheckbox(){
         if(checkboxes[i].checked ==false)
         {
             flag=1;
-            break;
-        }
-    }
-    if(flag==0)
-    {
-        selectAll[0].checked=true;
-    }
-    else
-    {
-        flag=0;
-        for(i=0;i<checkboxes.length;i++)        //checking if all are unchecked..
-        {
-            if(checkboxes[i].checked ==true)
-            {
-                flag=1;
-                break;
-            }
-        }
-        if(flag==0)
-        {
             selectAll[0].checked=false;
+            return;
         }
     }
-
-}
+    selectAll[0].checked=true;                  //If it cpomes here means selectAll should be unchecked.
+}  
 
 function calculate()
 {
-    var sum=0,avg=0,max=-1;
-    $('table .score').each(function()
+    var sum=0,avg=0,max=0;
+    rows=$("table tr");
+    var noOfChecked=0;
+    checkboxes=$("[name='checkbox']");
+    for(i=0;i<checkboxes.length;i++)
     {
-        item=parseInt(this.textContent,10);
-        sum=sum+item;
-        if(item>max)
-        max=item;
-    });
-    totalRows=$('table .score').length;
-    avg=sum/totalRows;
-
+        if(checkboxes[i].checked)
+        {
+            item=parseInt(rows[i+1].cells[2].textContent,10);
+            sum=sum+item;
+            if(item>max)
+                max=item;
+            noOfChecked++;
+        }
+    }
+    avg = noOfChecked==0 ? 0 : parseInt(sum/noOfChecked);
     $(".avg").remove();
     $("#avg").append("<span class='avg'>"+avg+"</span>");
     $(".max").remove();
     $("#max").append("<span class='max'>"+max+"</span>");
-
+    $(".sum").remove();
+    $("#sum").append("<span class='sum'>"+sum+"</span>");
 }

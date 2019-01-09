@@ -335,6 +335,7 @@ a:hover span , calculate-block
 }
 .calculate-block{
     font-size: 15px;
+    margin-left: 16px;
     border-style: none;
     padding-top: 2px;
     color: white;
@@ -421,7 +422,8 @@ span
 table {
     border:2px solid white;
     border-collapse: collapse;
-    column-width: 300px;
+
+    margin-left: 16px;
     
   }
 
@@ -435,12 +437,12 @@ table {
   }
  
 
- .max,.avg{
+ .max,.avg,.sum{
     color:white;
     font-size: 16px;
  }
 
- #avg{
+ #avg,#max{
      width:80px;
  }
  input[type="checkbox"]
@@ -475,3 +477,23 @@ table {
     color: red;
     padding: 0;
  }
+
+ .column-1{
+     width:38px;
+ }
+
+ .column-2{
+    width:211px;
+}
+
+.column-3{
+    width:80px;
+}
+
+.column-4{
+    width:284px;
+}
+
+.column-5{
+    width:211px;
+}

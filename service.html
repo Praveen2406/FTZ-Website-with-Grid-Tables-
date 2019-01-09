@@ -4,7 +4,7 @@
     <script src="grid_jqueryScript.js"></script>
     <link rel="stylesheet"   href="./FTZ_style.css" type="text/css">
 </head>
-<body>
+<body onload="createTable()">
 <div class="mainBlock">
     <div class="header">
         <div class="topRightNavs">
@@ -17,7 +17,6 @@
             <div class="linkWrapper" target="pp">
                 <a href="#" >Request a Quote</a></li>
             </div>
-              
         </div>
         <div class="DummyBlock">
         </div>
@@ -33,15 +32,11 @@
                     <li ><a id="default-link" class="top-navs" href="./service.html"><span>OUR SERVICES</span></a></li>
                     <li target="1"><a class="top-navs" href="#" target="12"><span>OUR CLIENTS</span></a></li>
                     <li target="1"><a class="top-navs" href="#" target=""><span>CONTACT US</span></a></li>
-                </ul>
                     </ul>
-
                 </div>
             </div>
         </div>
         </div>
-        
-    
     <div class="text-container" target="">
         <div class="margin-block bottom-to-top" target="">
             <div class="search-block">
@@ -49,61 +44,21 @@
             </div>
             <div class="table">
                 <table>
-                    <col width="50px">
-                    <col width="230px">
-                    <col width="80px">
-                    <col width="300px">
-                    <col width="220px">
-                    <tr>
-                        
-                        <td><input id="select-all" type="checkbox" onclick="selectAllCheckboxes()" ></td>
-                        <th>NAME</th>
-                        <th>SCORE</th>
-                        <th>EMAIL</th>
-                        <th></th>
+                   <tr>
+                        <td class="column-1"><input  id="select-all" type="checkbox" onclick="selectAllCheckboxes()" ></td>
+                        <th class="column-2">NAME</th>
+                        <th class="column-3">SCORE</th>
+                        <th class="column-4">EMAIL</th>
+                        <th class="column-5"></th>
                     </tr>
-                    <tr>
-                        <td><input name="checkbox" onclick="changeTopmostCheckbox()" type="checkbox"></td>
-                        <td>Praveen Yadav</td>
-                        <td class="score">34</td>
-                        <td>praveen@technovert.com</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><input name="checkbox" onclick="changeTopmostCheckbox()" type="checkbox"></td>
-                        <td>Galla Anand</td>
-                        <td class="score">43</td>
-                        <td>anand@technovert.com</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><input name="checkbox" onclick="changeTopmostCheckbox()" type="checkbox"></td>
-                        <td>Uva</td>
-                        <td class="score">45</td>
-                        <td>uva@technovert.com</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><input name="checkbox" onclick="changeTopmostCheckbox()" type="checkbox"></td>
-                        <td>Gopal Sahu</td>
-                        <td class="score">51</td>
-                        <td>gopal@technovert.com</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><input name="checkbox" onclick="changeTopmostCheckbox()" type="checkbox"></td>
-                        <td>Manohar Krishna</td>
-                        <td class="score">35</td>
-                        <td>krishna@technovert.com</td>
-                        <td></td>
                 </table>
                 <button class="calculate-block" onclick="calculate()">Calculate</button>
                 <div id="avg" class="float-left padding-left-50px margin-top-30px">Average:</div>
                 <div id="max" class="float-left padding-left-50px margin-top-30px">Max:</div>
+                <div id="sum" class="float-left padding-left-50px margin-top-30px">Sum:</div>
             </div>
         </div>
-    </div> 
-       
+    </div>  
     <div class="footer">
            <div class="copyright-block">
                <h5> Copyright ©2018 FTZ World Services. All rights reserved.           
@@ -115,12 +70,6 @@
             <a href="#" target="9">Request a Quote</a>
            </div>
     </div>
-        
-
 </div>
-
-
-
-
 </body>
 </html>
